@@ -1,0 +1,49 @@
+docker desktop should be installed
+and running
+create a Dockerfile in you project
+go inside the your project directory and build a docker image (can give any name for the image)
+
+docker build -f Dockerfile -t docker-spring-boot-image .
+
+it will create an docker image , check the image with "docker images" command
+
+
+#to know the list of created docker images
+$ docker images
+
+#to run the docker image in the machine
+$ docker run -p 9090:9090 docker-spring-boot-image
+
+control+C to stop the application
+
+
+1 POST
+http://localhost:9090/add/emp
+
+{
+    "empId": "1000",
+    "firstName": "Radha",
+    "lastName": "Singh",
+    "address": {
+        "stName": "Street Name",
+        "address1": "address 1 xyz",
+        "address2": "address 2 abc"
+    }
+}
+
+Check the console for logs
+
+2
+http://localhost:9090/delete/emp?empId=1000
+
+3
+http://localhost:9090/add/dept
+
+{
+    "deptId": "100",
+    "deptName": "IT department"
+}
+
+4
+http://localhost:9090/delete/dept?deptId=100
+
